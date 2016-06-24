@@ -6,6 +6,9 @@ describe('Create Computer', function() {
 		browser.get('http://computer-database.herokuapp.com/computers');
 		
 		});
+
+
+//function to reuse addupdate computer steps
 	function addUpdateComputer(strName,strStartDate,strEndDate,strCompany,strAsserttext) {
 		
 		element(by.id("name")).clear();
@@ -23,6 +26,8 @@ describe('Create Computer', function() {
 		//Done! Computer Test01 has been created
 	
 	}
+	
+	//Function to Read Computer
 	function ReadComputer(strName,strStartDate,strEndDate,strCompany) {
 	
 		expect(element(by.id("name")).getAttribute('value')).toEqual(strName);
@@ -36,6 +41,8 @@ describe('Create Computer', function() {
     
   		  expect(browser.getTitle()).toContain('Computers');
   });
+ 
+ //Computer should be added
    it('Should Add Computer', function() {
    		   
    		var btn_add = element(by.id('add'));
@@ -55,6 +62,7 @@ describe('Create Computer', function() {
    		   //browser.close();
    		  // browser.pause();
    });
+//Reading computer
 	it('Should Read Computer', function() {
 		
 		//var today = new Date();
@@ -87,6 +95,7 @@ describe('Create Computer', function() {
 	
 	});
 	
+//Updating Computer
 	it('Should Update Computer', function() {
 	
 		expect(browser.getTitle()).toContain('Computers');
@@ -101,6 +110,8 @@ describe('Create Computer', function() {
 		
 		//browser.pause();
 		});
+
+//Deleting computer
 	it('Should Delete Computer', function() {
 		expect(browser.getTitle()).toContain('Computers');
 		element(by.id("searchbox")).clear();
